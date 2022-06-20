@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class Task extends Model
 {
     protected $guarded=[];
    // protected $fillable  = ['id','author_name','title','description','image','user_id','category_id'];
@@ -17,14 +17,10 @@ class Book extends Model
    	return $this->belongsTo('App\User');
    }
 
-   public function category(){
-   	return $this->belongsTo('App\Category');
+   public function project(){
+   	return $this->belongsTo('App\Project');
    }
 
-    public function comments()
-    {
-        return $this->morphMany('App\Comment', 'commentable');
-    }
 
     public function getTagsIdArray(){
      $id_array=[];

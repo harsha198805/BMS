@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Tag;
+use Illuminate\Support\Facades\DB;
 
 class TagSeeder extends Seeder
 {

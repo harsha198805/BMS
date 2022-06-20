@@ -60,7 +60,7 @@
                         @else
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('books.index') }}">Books</a>
+                                    <a class="nav-link" href="{{ route('books.index') }}">Asign Task</a>
                                 </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

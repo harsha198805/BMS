@@ -7,17 +7,17 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between" >
-                        <div>Books Management System</div>
-                          <div><a href="{{route('books.create')}}" class="btn btn-success">Create Book</a></div>
+                        <div>Employee Task Management System</div>
+                          <div><a href="{{route('books.create')}}" class="btn btn-success">Asign Task</a></div>
                     </div>
                 </div>
 
                 <div class="card-body">
                  <div class="mb-2">
                       <form class="form-inline" action="">
-                      <label for="category_filter">Filter By Category &nbsp;</label>
+                      <label for="category_filter">Filter By Project &nbsp;</label>
                        <select class="form-control" id="category_filter" name="category">
-                        <option value="">Select Category</option>
+                        <option value="">Select Project</option>
                        @if(count($categories))
                           @foreach($categories as $category)
                              <option value="{{$category->name}}"  {{(Request::query('category') && Request::query('category')==$category->name)?'selected':''}}  >{{$category->name}}</option>
@@ -41,11 +41,10 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Book Name</th>
-                          <th>Author Name</th>
                           <th>Created By</th>
                           <th>Category</th>
-                          <th>Image</th>
+                          <th>Start Time</th>
+                          <th>End Time</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
@@ -54,14 +53,12 @@
                           @foreach($books as $post)
                         <tr>
                             <td >{{$post->id}}</td>
-                            <td style="width:15%">{{$post->title}}</td>
-                            <td style="width:15%">{{$post->author_name}}</td>
                             <td >{{$post->user->name}}</td>
-                            <td >{{$post->category->name}}</td>
-                                   <td>
-            <img width="100px" height="100px" src="{{asset('post_images/'.$post->image)}}">
-        </td>
-                                                      <td  style="width:250px;">
+                            <td >{{$post->project->name}}</td>
+                            <td >{{$post->start_time}}</td>
+                            <td >{{$post->end_time}}</td>
+
+                            <td  style="width:250px;">
                               <a  href="{{route('books.show',$post->id)}}" class="btn btn-primary">View</a>
                               <a href="{{route('books.edit',$post->id)}}" class="btn btn-success">Edit</a>
                               <a href="javascript:delete_post('{{route('books.destroy',$post->id)}}')" class="btn btn-danger">Delete</a>
@@ -73,7 +70,7 @@
                         @else
 
                           <tr>
-                            <td colspan="6" >No books found</td>
+                            <td colspan="6" >No records found</td>
         
                           </tr>
                         @endif
