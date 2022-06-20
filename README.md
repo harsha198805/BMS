@@ -7,10 +7,11 @@
 
 Clone the repository
 
+git clone https://github.com/harsha198805/BMS.git
 
 Switch to the repo folder
 
-    cd book_mnagment_system
+    cd BMS
 
 Install all the dependencies using composer
 
@@ -30,5 +31,8 @@ Run Migrations
 
 Db seed
  php artisan db:seed
+
+ Run 
+ php artisan serve
     
 
